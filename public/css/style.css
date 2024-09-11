@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 1rem;
+    padding: 0;
+}
+
+html {
+    font-family: Consolas, monospace;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    display: grid;
+    place-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    padding: 1rem;
+}
