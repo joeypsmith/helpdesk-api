@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const AutoIncrement = require('mongoose-sequence')(mongoose)
 
 const ticketSchema = new mongoose.Schema({
-    contact: {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
@@ -17,7 +17,6 @@ const ticketSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        required: true,
         default: 'Open'
     },
     type: {
@@ -29,6 +28,11 @@ const ticketSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    assignedUser: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        default: null
+    }
 }, {
     timestamps: true
 })
