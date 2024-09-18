@@ -22,11 +22,12 @@ const ticketSchema = new mongoose.Schema({
     type: {
         type: String,
         required: true,
-        default: 'Issue'
+        default: " "
     },
     category: {
         type: String,
-        required: true
+        required: true,
+        default: " "
     },
     assignedUser: {
         type: mongoose.Schema.Types.ObjectId,

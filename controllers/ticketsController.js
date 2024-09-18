@@ -29,13 +29,13 @@ const getAllTickets = asyncHandler(async(req, res) => {
 // @access Private
 
 const createNewTicket = asyncHandler(async(req, res) => {
-    const { user, title, body, type, category } = req.body
+    const { user, title, body } = req.body
 
-    if(!user || !title || !body || !type || !category) {
+    if(!user || !title || !body) {
         return res.status(400).json({ message: "Please provide all required fields" })
     }
 
-    const ticket = await Ticket.create({user, title, body, type, category})
+    const ticket = await Ticket.create({user, title, body})
 
     if(ticket) {
         res.status(201).json({ message: `Ticket #${ticket.ticketId} created`})
